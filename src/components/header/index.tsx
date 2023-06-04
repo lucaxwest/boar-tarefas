@@ -24,11 +24,11 @@ export function Header(){
                     ) }
                 </nav>
 
-                { status === "loading" ? ( 
+                { status === "loading" ? ( // se estiver loading, executa...
                     <></>
-                ) : session ? (  // Se não (:) / mas ele tem(?)...
+                ) : session ? ( // Se não está(:) em loading mas ele tem(?) uma session.. executa:
                     <button className={styles.loginButton} onClick={()=> signOut()}>Olá {session?.user?.name}</button>
-                ) : ( // Se não(:)
+                ) : ( // Se não ele não tem uma session, executa...(:)
                     <button className={styles.loginButton} onClick={()=> signIn("google")}>Acessar</button>
                 )}
             </section>
